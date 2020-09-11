@@ -6,14 +6,14 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benfred/github-analysis.git"
+    "url": "git+https://github.com/mygomod/github-analysis.git"
   },
   "author": "Ben Frederickson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/benfred/github-analysis/issues"
+    "url": "https://github.com/mygomod/github-analysis/issues"
   },
-  "homepage": "https://github.com/benfred/github-analysis#readme",
+  "homepage": "https://github.com/mygomod/github-analysis#readme",
   "dependencies": {
     "regression": "^2.0.1",
     "slideyslider": "^1.0.1"

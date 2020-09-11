@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/benfred/github-analysis/config"
 	"github.com/google/go-github/github"
 	"github.com/lib/pq"
+	"github.com/mygomod/github-analysis/config"
 )
 
 // Database connection to the github postgres database

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/benfred/github-analysis/config"
-	"github.com/benfred/github-analysis/githubarchive"
+	"github.com/mygomod/github-analysis/config"
+	"github.com/mygomod/github-analysis/githubarchive"
 )
 
 func main() {

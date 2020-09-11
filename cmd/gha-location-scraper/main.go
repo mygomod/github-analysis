@@ -4,13 +4,13 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	githubanalysis "github.com/mygomod/github-analysis"
+	"github.com/mygomod/github-analysis/config"
+	"github.com/mygomod/muses"
+	"github.com/mygomod/muses/pkg/database/mysql"
+	"googlemaps.github.io/maps"
 	"log"
 	"time"
-
-	githubanalysis "github.com/benfred/github-analysis"
-	"github.com/benfred/github-analysis/config"
-
-	"googlemaps.github.io/maps"
 )
 
 // InsertLocation inserts a google maps request into the db
@@ -77,7 +77,7 @@ func fetchLocations(conn *githubanalysis.Database, client *maps.Client) error {
 
 	defer rows.Close()
 
-        errs := 0
+	errs := 0
 
 	for rows.Next() {
 		var location string
@@ -96,11 +96,11 @@ func fetchLocations(conn *githubanalysis.Database, client *maps.Client) error {
 		fmt.Printf("Location %s Count %d\n", location, count)
 		err = fetchLocation(client, conn, location)
 		if err != nil {
-                        errs += 1;
-                        if (errs >= 500) {
-			    return err
-                        }
-                }
+			errs += 1
+			if errs >= 500 {
+				return err
+			}
+		}
 	}
 	return nil
 }
@@ -112,6 +112,10 @@ func main() {
 	if err != nil {
 		log.Fatalf("fatal error: %s", err)
 	}
+
+	app := muses.Container(
+		mysql.Register,
+	).SetCfg("config.toml")
 
 	db, err := githubanalysis.Connect(cfg)
 	if err != nil {

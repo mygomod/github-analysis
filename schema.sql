@@ -9,13 +9,13 @@ CREATE TABLE repos
   size integer NOT NULL default 0,
   stars integer NOT NULL default 0,
   forks integer NOT NULL default 0,
-  topics text[],
+  topics text,
   deleted boolean NOT NULL default false,
   parentid integer,
   ownerid integer,
-  created timestamp without time zone,
-  modified timestamp without time zone,
-  fetched timestamp without time zone,
+  created timestamp ,
+  modified timestamp ,
+  fetched timestamp ,
   statuscode integer
 );
 
@@ -32,24 +32,24 @@ CREATE TABLE users
   type text,
   followers integer,
   following integer,
-  created timestamp without time zone,
-  modified timestamp without time zone,
-  fetched timestamp without time zone,
+  created timestamp ,
+  modified timestamp ,
+  fetched timestamp ,
   statuscode integer
 );
 
 CREATE TABLE organization_members
 (
   organization integer PRIMARY KEY,
-  members integer[],
-  fetched timestamp without time zone,
+  members text,
+  fetched timestamp ,
   statuscode integer
 );
 
 CREATE TABLE locations
 (
   location text PRIMARY KEY,
-  fetched timestamp without time zone,
+  fetched timestamp ,
   data jsonb,
   city text,
   state text,

@@ -10,8 +10,8 @@ import (
 	"syscall"
 	"time"
 
-	githubanalysis "github.com/benfred/github-analysis"
-	"github.com/benfred/github-analysis/config"
+	githubanalysis "github.com/mygomod/github-analysis"
+	"github.com/mygomod/github-analysis/config"
 
 	"github.com/google/go-github/github"
 

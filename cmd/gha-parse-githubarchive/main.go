@@ -11,7 +11,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/benfred/github-analysis/githubarchive"
+	"github.com/mygomod/github-analysis/githubarchive"
 )
 
 func analyzeDay(pathname string) error {

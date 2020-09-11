@@ -11,15 +11,14 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/benfred/github-analysis/githubarchive"
 	"github.com/buger/jsonparser"
+	"github.com/mygomod/github-analysis/githubarchive"
 )
 
 type commitAuthor struct {
 	email string
 	name  string
 }
-
 
 // ParsePushCommits returns a list of author/email if the
 func parsePushCommits(data []byte) ([]*commitAuthor, error) {

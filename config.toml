@@ -1,0 +1,12 @@
+githubarchivepath = "/home/www/server/github/mygomod/github-analysis/store/githubarchive"
+ghtorrentpath = "/home/www/server/github/mygomod/github-analysis/find/ghtorrent"
+
+[Database]
+host = "localhost"
+username = "root"
+password = "root"
+dbname = "github"
+
+[[githubcredentials]]
+account = "placeholder_for_debugging"
+token = "github api token"
